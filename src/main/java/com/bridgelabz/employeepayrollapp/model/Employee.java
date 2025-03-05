@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-//@Table(name = "employees")
+@Table(name = "employees")
 public class Employee {
 
     @Id
@@ -18,9 +18,4 @@ public class Employee {
 
     public Employee() {}
 
-    public Employee(String name, String department, double salary) {
-        this.name = name;
-        this.department = department;
-        this.salary = salary;
-    }
 }
