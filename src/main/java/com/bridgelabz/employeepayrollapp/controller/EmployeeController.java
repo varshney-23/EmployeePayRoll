@@ -1,8 +1,10 @@
 package com.bridgelabz.employeepayrollapp.controller;
 
 
+import com.bridgelabz.employeepayrollapp.Interface.IEmployeeService;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +13,8 @@ import java.util.List;
 @RequestMapping("/employees")
 public class EmployeeController {
 
-    EmployeeService employeeService;
+    @Autowired
+    IEmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;

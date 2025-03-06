@@ -1,6 +1,5 @@
 package com.bridgelabz.employeepayrollapp.service;
 
-
 import com.bridgelabz.employeepayrollapp.Interface.IEmployeeService;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
@@ -13,12 +12,9 @@ import java.util.Optional;
 @Service
 public class EmployeeService implements IEmployeeService {
 
-    EmployeeRepository employeeRepository;
 
     @Autowired
-    public EmployeeService(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
+    EmployeeRepository employeeRepository;
 
     @Override
     public List<Employee> getAllEmployees() {

@@ -1,10 +1,16 @@
 package com.bridgelabz.employeepayrollapp.model;
 
+
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Data
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "employees")
 public class Employee {
 
@@ -16,6 +22,5 @@ public class Employee {
     private String department;
     private double salary;
 
-    public Employee() {}
-
+//    public Employee() {}
 }
