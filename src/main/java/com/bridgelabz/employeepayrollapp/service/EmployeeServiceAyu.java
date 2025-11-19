@@ -1,6 +1,6 @@
 package com.bridgelabz.employeepayrollapp.service;
 
-import com.bridgelabz.employeepayrollapp.Interface.IEmployee;
+import com.bridgelabz.employeepayrollapp.Interface.IEmployeeAyu;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class AmEmployeeService implements IEmployee {
+public class EmployeeServiceAyu implements IEmployeeAyu {
 
 
     @Autowired
