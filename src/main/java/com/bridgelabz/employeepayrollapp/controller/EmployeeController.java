@@ -1,7 +1,5 @@
 package com.bridgelabz.employeepayrollapp.controller;
 
-import com.bridgelabz.employeepayrollapp.Interface.IamEmployee;
-
 import com.bridgelabz.employeepayrollapp.Interface.IEmployeeService;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +43,6 @@ public class EmployeeController {
     
     @DeleteMapping("/delete/{id}")
     public void deleteEmployee(@PathVariable int id) {
-        amEmployee.deleteEmployee(id);
+        employeeService.deleteEmployee(id);
     }
 }
