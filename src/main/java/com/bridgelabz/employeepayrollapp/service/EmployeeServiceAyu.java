@@ -1,7 +1,7 @@
 package com.bridgelabz.employeepayrollapp.service;
 
 import com.bridgelabz.employeepayrollapp.Interface.IEmployeeAyu;
-import com.bridgelabz.employeepayrollapp.model.Employee;
+import com.bridgelabz.employeepayrollapp.model.EmployeeAyu;
 import com.bridgelabz.employeepayrollapp.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,23 +17,23 @@ public class EmployeeServiceAyu implements IEmployeeAyu {
     EmployeeRepository employeeRepository;
 
     @Override
-    public List<Employee> getAllEmployees() {
+    public List<EmployeeAyu> getAllEmployees() {
         return employeeRepository.findAll();
     }
 
     @Override
-    public Employee getEmployeeById(int id) {
-        Optional<Employee> employee = employeeRepository.findById(id);
+    public EmployeeAyu getEmployeeById(int id) {
+        Optional<EmployeeAyu> employee = employeeRepository.findById(id);
         return employee.orElse(null);
     }
 
     @Override
-    public Employee addEmployee(Employee employee) {
+    public EmployeeAyu addEmployee(EmployeeAyu employee) {
         return employeeRepository.save(employee);
     }
 
     @Override
-    public Employee updateEmployee(int id, Employee updatedEmployee) {
+    public EmployeeAyu updateEmployee(int id, EmployeeAyu updatedEmployee) {
         if (employeeRepository.existsById(id)) {
             updatedEmployee.setId(id);
             return employeeRepository.save(updatedEmployee);
