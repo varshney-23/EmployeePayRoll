@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface IEmployee {
+public interface IEmployeeAyu {
     List<Employee> getAllEmployees();
     Employee getEmployeeById(int id);
     Employee addEmployee(Employee employee);
