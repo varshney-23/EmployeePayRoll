@@ -1,9 +1,9 @@
 package com.bridgelabz.employeepayrollapp.controller;
 
 import com.bridgelabz.employeepayrollapp.Interface.IamEmployee;
+
 import com.bridgelabz.employeepayrollapp.Interface.IEmployeeService;
 import com.bridgelabz.employeepayrollapp.model.Employee;
-import com.bridgelabz.employeepayrollapp.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,5 +41,10 @@ public class EmployeeController {
     @PutMapping("/update/{id}")
     public Employee updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmployee) {
         return employeeService.updateEmployee(id, updatedEmployee);
+    }
+    
+    @DeleteMapping("/delete/{id}")
+    public void deleteEmployee(@PathVariable int id) {
+        amEmployee.deleteEmployee(id);
     }
 }
