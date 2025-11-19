@@ -1,6 +1,6 @@
 package com.bridgelabz.employeepayrollapp.controller;
 
-import com.bridgelabz.employeepayrollapp.Interface.IEmployee;
+import com.bridgelabz.employeepayrollapp.Interface.IEmployeeAyu;
 import com.bridgelabz.employeepayrollapp.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,34 +12,30 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    IEmployee iemployee;
-
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
+    IEmployeeAyu iemployeeayu;
 
     @GetMapping("/all")
     public List<Employee> getAllEmployees() {
-        return employeeService.getAllEmployees();
+        return iemployeeayu.getAllEmployees();
     }
 
     @GetMapping("/get/{id}")
     public Employee getEmployeeById(@PathVariable int id) {
-        return employeeService.getEmployeeById(id);
+        return iemployeeayu.getEmployeeById(id);
     }
 
     @PostMapping("/add")
     public Employee addEmployee(@RequestBody Employee employee) {
-        return employeeService.addEmployee(employee);
+        return iemployeeayu.addEmployee(employee);
     }
 
     @PutMapping("/update/{id}")
     public Employee updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmployee) {
-        return employeeService.updateEmployee(id, updatedEmployee);
+        return iemployeeayu.updateEmployee(id, updatedEmployee);
     }
     
     @DeleteMapping("/delete/{id}")
     public void deleteEmployee(@PathVariable int id) {
-        employeeService.deleteEmployee(id);
+        iemployeeayu.deleteEmployee(id);
     }
 }
