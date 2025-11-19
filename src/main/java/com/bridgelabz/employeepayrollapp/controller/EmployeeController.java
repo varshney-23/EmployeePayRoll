@@ -16,6 +16,9 @@ public class EmployeeController {
     @Autowired
     IEmployeeService employeeService;
 
+    @Autowired
+    IamEmployee amEmployee;
+
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
@@ -38,10 +41,5 @@ public class EmployeeController {
     @PutMapping("/update/{id}")
     public Employee updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmployee) {
         return employeeService.updateEmployee(id, updatedEmployee);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public void deleteEmployee(@PathVariable int id) {
-        employeeService.deleteEmployee(id);
     }
 }
