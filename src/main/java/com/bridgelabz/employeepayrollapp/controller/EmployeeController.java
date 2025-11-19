@@ -1,7 +1,7 @@
 package com.bridgelabz.employeepayrollapp.controller;
 
 import com.bridgelabz.employeepayrollapp.Interface.IEmployeeAyu;
-import com.bridgelabz.employeepayrollapp.model.Employee;
+import com.bridgelabz.employeepayrollapp.model.EmployeeAyu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,22 +15,22 @@ public class EmployeeController {
     IEmployeeAyu iemployeeayu;
 
     @GetMapping("/all")
-    public List<Employee> getAllEmployees() {
+    public List<EmployeeAyu> getAllEmployees() {
         return iemployeeayu.getAllEmployees();
     }
 
     @GetMapping("/get/{id}")
-    public Employee getEmployeeById(@PathVariable int id) {
+    public EmployeeAyu getEmployeeById(@PathVariable int id) {
         return iemployeeayu.getEmployeeById(id);
     }
 
     @PostMapping("/add")
-    public Employee addEmployee(@RequestBody Employee employee) {
+    public EmployeeAyu addEmployee(@RequestBody EmployeeAyu employee) {
         return iemployeeayu.addEmployee(employee);
     }
 
     @PutMapping("/update/{id}")
-    public Employee updateEmployee(@PathVariable int id, @RequestBody Employee updatedEmployee) {
+    public EmployeeAyu updateEmployee(@PathVariable int id, @RequestBody EmployeeAyu updatedEmployee) {
         return iemployeeayu.updateEmployee(id, updatedEmployee);
     }
     
